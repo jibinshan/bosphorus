@@ -101,10 +101,12 @@ export const RestaurantProvider: React.FC<{ children: React.ReactNode }> = ({
         `${apiUrl}/restaurant/${restaurantID}/category?pageSize=30000&pageNum=1&filter_enabled=true`,
       );
       const data = res.data.data.rows;
-      return data
-        ?.filter((item) => item.order)
+      const filteredData = data
+        .filter((item) => item.name.toLowerCase() !== "modifiers")
+        .filter((item) => item.order)
         .sort((a, b) => a.order - b.order);
-    },
+      return filteredData
+    }
   });
 
   const { data: modelData } = useQuery({

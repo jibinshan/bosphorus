@@ -91,11 +91,11 @@ const Menu = () => {
     sortedMenu?.forEach((data) => {
       const categoryexist = data.items.find(
         (Item) =>
-          Item?.extras?.availability?.days.includes(
-            format(Date.now(), "EEEE").toLowerCase()
-          ) &&
-          (Item?.extras?.menuItemOrderType === "both" ||
-            Item?.extras?.menuItemOrderType === "takeaway")
+        // Item?.extras?.availability?.days.includes(
+        //   format(Date.now(), "EEEE").toLowerCase()
+        // ) &&
+        (Item?.extras?.menuItemOrderType === "both" ||
+          Item?.extras?.menuItemOrderType === "takeaway")
       )?._idCategory;
 
       if (categoryexist && !updatedCategories.includes(categoryexist)) {
@@ -178,7 +178,9 @@ const Menu = () => {
                 </h1>
                 <div className="hidden h-full w-full grid-cols-1 gap-4 md:grid lg:grid-cols-2">
                   {data.items.map((item) => {
-                    if (item.extras?.availability?.days.includes(format(Date.now(), "EEEE").toLowerCase()) && (item.extras?.menuItemOrderType === "both" || item.extras?.menuItemOrderType === "takeaway")) {
+                    if (
+                      // item.extras?.availability?.days.includes(format(Date.now(), "EEEE").toLowerCase()) &&
+                      (item.extras?.menuItemOrderType === "both" || item.extras?.menuItemOrderType === "takeaway")) {
                       return <MenuItem key={item._id} id={item._id} />;
                     } else {
                       return null
@@ -187,7 +189,9 @@ const Menu = () => {
                 </div>
                 <div className="grid h-full w-full grid-cols-1 gap-4 md:hidden lg:grid-cols-2">
                   {data.items.map((item) => {
-                    if (item.extras?.availability?.days.includes(format(Date.now(), "EEEE").toLowerCase()) && (item.extras?.menuItemOrderType === "both" || item.extras?.menuItemOrderType === "takeaway")) {
+                    if (
+                      // item.extras?.availability?.days.includes(format(Date.now(), "EEEE").toLowerCase()) &&
+                      (item.extras?.menuItemOrderType === "both" || item.extras?.menuItemOrderType === "takeaway")) {
                       return <MenuItemMobile key={item._id} id={item._id} />;
                     } else {
                       return null
