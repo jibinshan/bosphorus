@@ -42,6 +42,19 @@ const Glimpse = ({ }) => {
 
     })
 
+    gsap.to('.glimpse-image', {
+      scrollTrigger: {
+        trigger: ".glimpse-image",
+        toggleActions: 'restart none none none',
+        // start: "top 80%", // When the top of the .title enters 80% of the viewport
+        // end: "top 50%",   // When the top of the .title reaches 50% of the viewport
+        // scrub: true
+      },
+      scale: 1,
+      duration: 1.5
+
+    })
+
     // const lenis = new Lenis();
 
     // lenis.on("scroll", (e) => {
@@ -75,7 +88,10 @@ const Glimpse = ({ }) => {
             width={387}
             height={492}
             alt="image"
-            className="w-full"
+            className="glimpse-image w-full"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -88,7 +104,10 @@ const Glimpse = ({ }) => {
             width={387}
             height={492}
             alt="image"
-            className="w-full"
+            className="glimpse-image w-full"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -101,7 +120,10 @@ const Glimpse = ({ }) => {
             width={387}
             height={492}
             alt="image"
-            className="w-full"
+            className="glimpse-image w-full"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -114,7 +136,10 @@ const Glimpse = ({ }) => {
             width={387}
             height={492}
             alt="image"
-            className="w-full"
+            className="glimpse-image w-full"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -122,7 +147,7 @@ const Glimpse = ({ }) => {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 

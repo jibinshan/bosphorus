@@ -60,6 +60,16 @@ const Menu = ({ }) => {
       duration: 1.5
     }
     )
+
+    gsap.to('.menu-images', {
+      scrollTrigger: {
+        trigger: ".menu-images",
+        toggleActions: "restart none none none"
+      },
+      scale: 1,
+      duration: 1.5,
+    }
+    )
     // const lenis = new Lenis();
 
     // lenis.on("scroll", (e) => {
@@ -93,7 +103,10 @@ const Menu = ({ }) => {
             width={444}
             height={598}
             alt="image"
-            className="w-full md:h-[500px]"
+            className="menu-images w-full md:h-[500px]"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -107,7 +120,10 @@ const Menu = ({ }) => {
             width={444}
             height={598}
             alt="image"
-            className="w-full md:h-[500px]"
+            className="menu-images w-full md:h-[500px]"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
@@ -121,7 +137,10 @@ const Menu = ({ }) => {
             width={444}
             height={598}
             alt="image"
-            className="w-full md:h-[500px]"
+            className="menu-images w-full md:h-[500px]"
+            style={{
+              transform: "scale(0.8)"
+            }}
           />
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">

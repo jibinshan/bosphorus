@@ -35,12 +35,12 @@ const Hero = ({ }) => {
           <video
             className="min-h-full min-w-full object-cover"
             style={{ objectPosition: "center" }}
-            src="https://foodo-web-videos.s3.eu-west-2.amazonaws.com/istanbul-liverpool.mp4"
+            src="/video/home/hero.mp4"
             autoPlay
             loop
             muted
             playsInline
-            poster="https://foodo-web-videos.s3.eu-west-2.amazonaws.com/istanbul-liverpool-banner.png"
+          // poster="https://foodo-web-videos.s3.eu-west-2.amazonaws.com/istanbul-liverpool-banner.png"
           ></video>
         </div>
         <div className="z-40 flex h-full w-full max-w-[1300px] items-center justify-center">
