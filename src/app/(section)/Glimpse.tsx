@@ -5,9 +5,11 @@ import Link from "next/link";
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const Glimpse = ({ }) => {
+  const [mouse, setMouse] = useState('')
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
@@ -83,64 +85,78 @@ const Glimpse = ({ }) => {
       </div>
       <div className="w-full max-w-[1300px] flex flex-col gap-2 md:gap-6 md:flex-row justify-center md:justify-between items-center ">
         <div className="relative w-full md:w-1/4 flex flex-col justify-center items-center gap-4">
-          <Image
-            src='/images/home/adana.png'
-            width={387}
-            height={492}
-            alt="image"
-            className="glimpse-image w-full"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("1")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/adana.png'
+              width={387}
+              height={492}
+              alt="image"
+              className="glimpse-image w-full"
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "1" && "flex overlay")} ></div>
+          </div>
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Meat Platters</p>
           </div>
         </div>
         <div className="relative w-full md:w-1/4 flex flex-col justify-center items-center gap-4">
-          <Image
-            src='/images/home/meze.png'
-            width={387}
-            height={492}
-            alt="image"
-            className="glimpse-image w-full"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("2")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/meze.png'
+              width={387}
+              height={492}
+              alt="image"
+              className="glimpse-image w-full"
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "2" && "flex overlay")} ></div>
+          </div>
+
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Mocktails</p>
           </div>
         </div>
         <div className="relative w-full md:w-1/4 flex flex-col justify-center items-center gap-4">
-          <Image
-            src='/images/home/beklava.png'
-            width={387}
-            height={492}
-            alt="image"
-            className="glimpse-image w-full"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("3")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/beklava.png'
+              width={387}
+              height={492}
+              alt="image"
+              className="glimpse-image w-full"
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "3" && "flex overlay")} ></div>
+          </div>
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Vegetarian Dishes</p>
           </div>
         </div>
         <div className="relative w-full md:w-1/4 flex flex-col justify-center items-center gap-4">
-          <Image
-            src='/images/home/kebab.png'
-            width={387}
-            height={492}
-            alt="image"
-            className="glimpse-image w-full"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("4")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/kebab.png'
+              width={387}
+              height={492}
+              alt="image"
+              className="glimpse-image w-full"
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "4" && "flex overlay")} ></div>
+          </div>
+
           <div
             className="h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Vegetarian Dishes</p>

@@ -3,13 +3,15 @@ import { Icons } from "@/components/Icon";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type';
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const Menu = ({ }) => {
+  const [mouse, setMouse] = useState<string>('')
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     gsap.to('.title', {
@@ -86,6 +88,8 @@ const Menu = ({ }) => {
     //   lenis.destroy(); // Cleanup Lenis instance to avoid memory leaks
     // };
   }, [])
+
+
   return (
     <section className="relative flex flex-col gap-4 md:gap-8 h-full w-full items-center justify-center overflow-hidden py-12 md:py-24 pl-0 lg:pr-8">
       <div className="w-full flex flex-col justify-center items-center gap-3">
@@ -97,17 +101,20 @@ const Menu = ({ }) => {
         </h1>
       </div>
       <div className="w-full max-w-[1300px] flex flex-col gap-2 md:gap-6 md:flex-row justify-center md:justify-between items-center ">
-        <div className="relative w-full md:w-1/3 flex flex-col justify-center items-center">
-          <Image
-            src='/images/home/image.png'
-            width={444}
-            height={598}
-            alt="image"
-            className="menu-images w-full md:h-[500px]"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+        <div className="container relative w-full md:w-1/3 flex flex-col justify-center items-center">
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("1")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/image.png'
+              width={444}
+              height={598}
+              alt="image"
+              className="menu-images w-full md:h-[500px] "
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "1" && "flex overlay")} ></div>
+          </div>
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Meat Platters</p>
@@ -115,16 +122,19 @@ const Menu = ({ }) => {
           </div>
         </div>
         <div className="relative w-full md:w-1/3 flex flex-col justify-center items-center">
-          <Image
-            src='/images/home/image2.png'
-            width={444}
-            height={598}
-            alt="image"
-            className="menu-images w-full md:h-[500px]"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("2")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/image2.png'
+              width={444}
+              height={598}
+              alt="image"
+              className="menu-images w-full md:h-[500px] "
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "2" && "flex overlay")} ></div>
+          </div>
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Mocktails</p>
@@ -132,16 +142,19 @@ const Menu = ({ }) => {
           </div>
         </div>
         <div className="relative w-full md:w-1/3 flex flex-col justify-center items-center">
-          <Image
-            src='/images/home/image3.png'
-            width={444}
-            height={598}
-            alt="image"
-            className="menu-images w-full md:h-[500px]"
-            style={{
-              transform: "scale(0.8)"
-            }}
-          />
+          <div className="relative h-fit w-fit overflow-hidden" onMouseEnter={() => setMouse("3")} onMouseLeave={() => setMouse('')}>
+            <Image
+              src='/images/home/image3.png'
+              width={444}
+              height={598}
+              alt="image"
+              className="menu-images w-full md:h-[500px] "
+              style={{
+                transform: "scale(0.8)"
+              }}
+            />
+            <div className={cn('hidden', mouse === "3" && "flex overlay")} ></div>
+          </div>
           <div
             className="absolute h-fit w-full bottom-8 z-10 flex flex-col items-center justify-center gap-4">
             <p className="w-full font-oswald text-3xl font-bold text-center">Vegetarian Dishes</p>
