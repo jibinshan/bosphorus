@@ -18,7 +18,7 @@ const Sidebar: FC<SidebarProps> = ({ children }) => {
   return (
     <Sheet>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent className="w-[300px] sm:w-[540px]">
+      <SheetContent className="w-[300px] sm:w-[540px] bg-black">
         <SheetHeader>
           <SheetTitle>
             <Image src="/images/logo.png" width={162} height={35} alt="Foodo" />
