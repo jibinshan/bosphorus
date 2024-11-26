@@ -86,7 +86,7 @@ const PrivateAndGroupDining = ({ }) => {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="stars">
+                {/* <div className="stars">
                     {Array.from({ length: 20 }).map((_, index) => (
                         <div className="star" key={index} style={{
                             "--top-offset": `${Math.random() * 100}vh`,
@@ -95,7 +95,7 @@ const PrivateAndGroupDining = ({ }) => {
                             "--star-tail-length": `${5 + Math.random() * 3}em`,
                         } as React.CSSProperties}></div>
                     ))}
-                </div>
+                </div> */}
                 <div className="absolute left-0 top-0 z-10 h-full w-full bg-black/20"></div>
                 <div className="flex h-full w-full flex-col items-start justify-center gap-[2.5rem] p-6 lg:px-32 z-20">
                     <h3 className="dining-title font-oswald uppercase -ml-[50px]">Booking</h3>

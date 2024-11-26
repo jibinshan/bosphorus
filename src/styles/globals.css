@@ -157,7 +157,7 @@
 
 
 /*star*/
-
+/* 
 .stars {
   position: absolute;
   top: 0;
@@ -166,16 +166,24 @@
   height: 120%;
   transform: rotate(-45deg);
 }
-.star {
-  --top-offset: 0vh; /* Default vertical position */
-  --fall-duration: 6s; /* Default animation duration */
-  --fall-delay: 0s; /* Default animation delay */
-  --star-tail-length: 5em; /* Default tail length */
-  --star-color: var(--primary-color); /* Default star color */
-  --star-tail-height: 2px; /* Default tail height */
-  --star-width: calc(var(--star-tail-length) / 6); /* Default star width */
 
-  position: absolute;
+.star {
+  --top-offset: 0vh;
+  --fall-duration: 6s;
+  --fall-delay: 0s;
+  --star-tail-length: 5em;
+  --star-color: var(--primary-color);
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6); */
+/* Default vertical position */
+/* Default animation duration */
+/* Default animation delay */
+/* Default tail length */
+/* Default star color */
+/* Default  tail height */
+/* Default star width */
+
+/* position: absolute;
   top: var(--top-offset);
   left: 0;
   width: var(--star-tail-length);
@@ -188,7 +196,8 @@
 
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
     tail-fade var(--fall-duration) var(--fall-delay) ease-out infinite;
-}
+} */
+
 /* 
 .star:nth-child(1) {
   --star-tail-length: 5em;
@@ -206,7 +215,7 @@
 
 /* Repeat the above pattern for all 50 stars with unique values. */
 
-.star::before,
+/* .star::before,
 .star::after {
   position: absolute;
   content: '';
@@ -269,4 +278,4 @@
   to{
     transform: translateX(100%);
   }
-}
+} */
