@@ -67,7 +67,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
       variant="outline"
       size="icon"
       className={cn(
-        "group/btn h-10 w-10 rounded-full border-0 border-primary text-primary hover:bg-primary",
+        "group/btn h-10 w-10 rounded-full border-0 border-[#fa771f] bg-[#000] text-[#fa771f] hover:bg-primary",
         "-left-12 top-1/2 -translate-y-1/2",
       )}
       {...restProps}
@@ -75,7 +75,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
       <div
         className="absolute inset-0 flex rounded-full group-hover/btn:hidden"
         style={{
-          border: `2px solid #BC995D`,
+          border: `2px solid #fa771f`,
           // clipPath: "polygon(0 0, 100% 0, 60% 100%, 0 100%)",
           transition: "clip-path 0.4s ease-in-out",
           transform: "rotate(160deg)",
@@ -95,7 +95,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       variant="outline"
       size="icon"
       className={cn(
-        "group/btn h-10 w-10 rounded-full border-0 border-primary text-primary hover:bg-primary",
+        "group/btn h-10 w-10 rounded-full border-0 border-[#fa771f] bg-[#000] text-[#fa771f] hover:bg-primary",
         "-right-12 top-1/2 -translate-y-1/2",
       )}
       {...restProps}
@@ -103,7 +103,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       <div
         className="absolute inset-0 flex rounded-full group-hover/btn:hidden"
         style={{
-          border: `2px solid #BC995D`,
+          border: `2px solid #fa771f`,
           // clipPath: "polygon(0 0, 100% 0, 60% 100%, 0 100%)",
           transition: "clip-path 0.4s ease-in-out",
           transform: "rotate(-20deg)",

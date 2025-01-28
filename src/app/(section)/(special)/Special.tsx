@@ -2,74 +2,69 @@
 import EmblaCarousel from "@/app/(section)/(special)/MenuCarousel";
 import { useRestaurant } from "@/context/RestaurantContext";
 import type { EmblaOptionsType } from "embla-carousel";
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import SplitType from 'split-type';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 import { useEffect } from "react";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
-const Special = ({ }) => {
+const Special = ({}) => {
   const { modelData } = useRestaurant();
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(ScrollTrigger);
     const mm = gsap.matchMedia();
 
     mm.add("(max-width:690px)", () => {
-      gsap.to('.special-description', {
+      gsap.to(".special-description", {
         scrollTrigger: {
           trigger: ".special-description",
-          toggleActions: "restart none none none"
+          toggleActions: "restart none none none",
         },
         x: 0,
-      }
-      )
-    })
+      });
+    });
 
     mm.add("(min-width:691px)", () => {
-      gsap.to('.special-description', {
+      gsap.to(".special-description", {
         scrollTrigger: {
           trigger: ".special-description",
-          toggleActions: "restart none none none"
+          toggleActions: "restart none none none",
         },
         x: 30,
-        duration: 2
-      }
-      )
-    })
+        duration: 2,
+      });
+    });
 
-    gsap.to('.special-title', {
+    gsap.to(".special-title", {
       scrollTrigger: {
         trigger: ".special-title",
-        toggleActions: 'restart none none none',
+        toggleActions: "restart none none none",
         // start: "top 80%", // When the top of the .title enters 80% of the viewport
         // end: "top 50%",   // When the top of the .title reaches 50% of the viewport
         // scrub: true
       },
       x: 30,
-      duration: 1.5
+      duration: 1.5,
+    });
 
-    })
-
-    const splitType = document.querySelectorAll(".special-head")
+    const splitType = document.querySelectorAll(".special-head");
     splitType.forEach((char, i) => {
       if (char instanceof HTMLElement) {
-        const text = new SplitType(char, { types: "chars" })
+        const text = new SplitType(char, { types: "chars" });
         gsap.from(text.chars, {
           scrollTrigger: {
             trigger: char,
-            start: 'top 80%',
-            end: 'top 20%',
+            start: "top 80%",
+            end: "top 20%",
             scrub: true,
-            markers: false
+            markers: false,
           },
           opacity: 0.2,
-          stagger: 0.2
-        })
+          stagger: 0.2,
+        });
       }
-    })
-
-
+    });
 
     // const lenis = new Lenis();
 
@@ -86,14 +81,16 @@ const Special = ({ }) => {
     // return () => {
     //   lenis.destroy(); // Cleanup Lenis instance to avoid memory leaks
     // };
-  }, [])
+  }, []);
   return (
     <section className="relative flex h-full w-full justify-center bg-[#070707]">
       <div className="flex h-full w-full max-w-[1300px] flex-col items-center justify-center gap-6 py-12">
-        <div className="w-full flex flex-col justify-center items-center gap-3">
-          <h3 className="special-title font-caramel uppercase italic -ml-[50px] text-xl text-primary">Special</h3>
-          <h1 className="special-head max-w-[600px] text-center font-oswald font-bold text-5xl sm:text-7xl">
-            Bosphorus{' '}<span className="text-primary">Specials</span>
+        <div className="flex w-full flex-col items-center justify-center gap-3">
+          <h3 className="special-title -ml-[50px] font-caramel text-xl uppercase italic text-primary">
+            Special
+          </h3>
+          <h1 className="special-head font-oswald text-center text-5xl font-bold md:text-7xl">
+            Bosphorus <span className="text-primary">Specials</span>
           </h1>
         </div>
         {modelData && (
@@ -102,7 +99,7 @@ const Special = ({ }) => {
           </div>
         )}
       </div>
-    </section >
+    </section>
   );
 };
 

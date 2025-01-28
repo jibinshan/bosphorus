@@ -35,14 +35,14 @@ const Navbar = ({
   return (
     <nav
       className={cn(
-        `${position} top-0 z-50 flex h-[10vh] w-full flex-col items-center bg-transparent p-4 transition-all duration-0 ease-in-out`,
+        `${position} top-0 z-50 flex h-[12vh] w-full flex-col items-center bg-transparent py-2 transition-all duration-0 ease-in-out md:py-0`,
         isScrolled && "bg-black",
       )}
     >
-      <div className="flex w-full max-w-[1300px] flex-col items-center gap-2">
+      <div className="flex w-full flex-col items-center gap-2">
         <div
           className={cn(
-            "mb-2 flex w-full justify-between md:border-b border-white/30 md:py-2",
+            "mb-2 flex w-full justify-between border-white/30 md:border-b md:px-10 md:py-4",
             (isScrolled || pathname !== "/") && "hidden",
           )}
         >
@@ -52,10 +52,11 @@ const Navbar = ({
               target="_blank"
               className="flex items-center gap-2 text-sm text-white md:text-sm"
             >
-              <MapPin />9 Earlsdon St, Earlsdon, Coventry
+              <MapPin className="text-[#fa771f]" />9 Earlsdon St, Earlsdon,
+              Coventry
             </Link>
             <p className="flex items-center gap-2 text-sm text-white md:text-sm">
-              <Clock />
+              <Clock className="text-[#fa771f]" />
               Everyday: 11:00 AM - 23:00 PM
             </p>
           </div>
@@ -65,66 +66,76 @@ const Navbar = ({
               target="_blank"
               className="flex items-center gap-2 text-sm text-white md:text-sm"
             >
-              <Phone />
+              <Phone className="text-[#fa771f]" />
               +442477350145
             </Link>
-            {/* <Link
+            <Link
               href="mailto:reservations@istanbulrestaurantmanchester.co.uk"
               target="_blank"
               className="flex items-center gap-2 text-sm text-white md:text-sm"
             >
-              <Mail />
-              reservations@istanbulrestaurantmanchester.co.uk
-            </Link> */}
+              <Mail className="text-[#fa771f]" />
+              reservations@istanbulrestaurantmanchester.co.uk{" "}
+            </Link>
           </div>
         </div>
-        <div className="flex h-full w-full items-center justify-between">
-          <Link href="/">
+        <div className="flex h-full w-full items-center justify-between px-2 md:px-20">
+          <Link href="/" className="md:hidden">
             <Image src="/images/logo.png" width={188} height={56} alt="logo" />
           </Link>
-          <div className="hidden flex-row items-center justify-center gap-[3.48rem] md:flex">
-            <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
-            >
-              <Link href="/">Home</Link>
-            </Button>
-            <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
-            >
-              <Link href="/menu">Menu</Link>
-            </Button>
-            <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
-            >
-              <Link href="/about-us">About</Link>
-            </Button>
-            <Button
-              asChild
-              variant="link"
-              className="px-0 uppercase text-accent"
-            >
-              <Link href="/contact">Contact</Link>
-            </Button>
-            {/* <Button
+          <div className="ml-[8%] flex w-full items-center justify-center">
+            <div className="hidden flex-row items-center justify-center gap-[4.5rem] md:flex">
+              <Button
+                asChild
+                variant="link"
+                className="px-0 uppercase text-accent"
+              >
+                <Link href="/">Home</Link>
+              </Button>
+              <Button
+                asChild
+                variant="link"
+                className="px-0 uppercase text-accent"
+              >
+                <Link href="/menu">Menu</Link>
+              </Button>
+              <Link href="/">
+                <Image
+                  src="/images/logo.png"
+                  width={180}
+                  height={52}
+                  alt="logo"
+                />
+              </Link>
+              <Button
+                asChild
+                variant="link"
+                className="px-0 uppercase text-accent"
+              >
+                <Link href="/about-us">About</Link>
+              </Button>
+              <Button
+                asChild
+                variant="link"
+                className="px-0 uppercase text-accent"
+              >
+                <Link href="/contact">Contact</Link>
+              </Button>
+              {/* <Button
               asChild
               variant="link"
               className="px-0 uppercase text-accent"
             >
               <Link href="/table-booking">Table Booking</Link>
             </Button> */}
-            {/* <Button
+              {/* <Button
               asChild
               variant="link"
               className="px-0 uppercase text-accent"
             >
               <Link href="/gift-voucher">Gift Voucher</Link>
             </Button> */}
+            </div>
           </div>
           <div className="hidden items-center justify-center gap-[2.5rem] md:flex">
             {pathname !== "/" && (
@@ -141,11 +152,11 @@ const Navbar = ({
             )}
             <Link href="/table-booking">
               <Button
-                className="group h-12 items-center gap-[1.19rem] rounded-full bg-primary font-semibold uppercase text-white hover:bg-primary"
+                className="group h-12 items-center gap-[1.19rem] rounded-none bg-primary px-5 py-7 font-semibold uppercase text-[#282828] hover:bg-primary"
                 variant="secondary"
               >
                 Book A Table
-                <Icons.rightArrow className="duration-300 ease-in-out group-hover:translate-x-1" />
+                <Icons.rightArrow className="text-[#282828] duration-300 ease-in-out group-hover:translate-x-1" />
               </Button>
             </Link>
           </div>

@@ -20,9 +20,9 @@ export default function HomePage() {
         <Menu />
         <Experience />
         <Special />
+        <Glimpse />
         <PrivateAndGroupDining />
         <Reviews />
-        <Glimpse />
         <Map />
         <Contact />
         <Footer />

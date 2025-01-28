@@ -2,7 +2,7 @@ import { Icons } from "@/components/Icon";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const ViewMenu = ({ }) => {
+const ViewMenu = ({}) => {
   return (
     <Button
       asChild
@@ -10,9 +10,8 @@ const ViewMenu = ({ }) => {
     >
       <Link href="/table-booking">
         <Icons.dining color="#8f8f8f" />
-        Table
-        <br />
-        Booking
+        View <br />
+        Menu{" "}
       </Link>
     </Button>
   );
